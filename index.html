@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="quoteBook">
+    <head>
+        <meta charset="utf-8">
+        <title>quoteBook</title>
+ 
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    </head>
+    <body ng-controller="mainController">
+
+        <div class="main-wrapper">
+          <div class="filter">
+            <p>Filter quotes by:</p>
+            <input placeholder="Quote text" ng-model="textPredicate" />
+            <input placeholder="Author name" ng-model="authorPredicate" />
+          </div>
+
+          <div class="quote-book-main">
+
+            <div class="quote-box add-quote">
+              <p>Add a new quote:</p>
+              <input class="add-text" placeholder="Quote text" ng-model="text"/>
+              <input class="add-author" placeholder="Author name" ng-model="author"/>
+              <div class="button" ng-click="addQuote(text, author)">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              </div>
+              <div class="restore-deleted" ng-click="restoreDeleted()">
+                <p>Restore deleted</p>
+              </div>
+            </div>
+
+            <div class="quote-box" ng-repeat="quote in quotes | filter: {text: textPredicate, author: authorPredicate} track by $index" > 
+                  <!-- track by $index is useful to try whenver ng-repeat is having problems. It MUST come at the end of the filter expression-->
+              <p><span class="text">{{quote.text}} </span><br /><span class="author">{{quote.author}}</span></p>
+              <div class="button" ng-click="removeQuote(quote)"> 
+                    <!-- function must operate on entire array item (quote) and its .indexOf rather than the angular $index value, if the removal function is going to identify the proper array element while filtered. -->
+                <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/mainService.js"></script>
+        <script src="js/mainController.js"></script>
+        <script src="https://use.fontawesome.com/2988cdf027.js"></script>
+    </body>
+</html>

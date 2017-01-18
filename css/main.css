@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+  color: #444444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+}
+
+.filter {
+  min-width: 200px;
+  min-height: 100px;
+  margin: 20px;
+  padding: 2vw;
+  background-color: #ffffff;
+  border: 2px solid #CCCCCC;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+input {
+    border:2px solid #eee; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.filter input {
+  display: block;
+  margin-top: 20px;
+}
+
+.main-wrapper {
+  min-width: 400px;
+  width:40vw;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.quote-book-main {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-color: #CCCCCC;
+  border-style: solid;
+  border-width: 0 2px 0 2px;
+    -webkit-box-shadow: 0px 10px 70px -11px rgba(0,0,0,0.22);
+  -moz-box-shadow: 0px 10px 70px -11px rgba(0,0,0,0.22);
+  box-shadow: 0px 10px 70px -11px rgba(0,0,0,0.22);
+    border-style: solid;
+  border-width: 0 0 2px 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.quote-box {
+  background-color: #FFFFFF;
+  padding: 2vw 4vw;
+  border-color: #CCCCCC;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+
+}
+
+.text {
+  display: block;
+}
+
+.author {
+  display: block;
+  color: #BBBBBB;
+  text-transform: uppercase;
+  font-size: 28px;
+  margin-top: 30px;
+}
+
+.add-quote input {
+    margin: 20px 5px 30px 0px; 
+
+}
+
+.add-text {
+  width: 63%;
+}
+
+.add-author {
+  width: 30%;
+}
+
+.button {
+  position:absolute;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.7;
+}
+
+.restore-deleted {
+  font-size: 12px;
+  position: absolute;
+  bottom: 16px;
+  left: 45px;
+}
+
+/* button effects using ng-click*/
+
+[ng-click] {
+  opacity: 0.5;
+}
+
+[ng-click]:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
